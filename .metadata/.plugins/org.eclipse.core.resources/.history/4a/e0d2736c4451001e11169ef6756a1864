@@ -1,0 +1,36 @@
+
+public class Cat extends Animal {
+
+	public Cat(String name, float weight, String color) {
+		super(name, weight, color);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	@Override
+	void speaK(String speakSound) {
+		// TODO Auto-generated method stub
+		System.out.println("야아옹");
+		
+	}
+
+
+	@Override
+	void animalInformation() {
+		System.out.println("동물 종류: 고양이");
+		System.out.println("이름: "+this.name);
+		System.out.println("무게: "+this.weight);
+		System.out.println("색깔: "+this.color);
+		
+	}
+
+
+	@Override
+	String animaType() {
+		// TODO Auto-generated method stub
+		return "고양이";
+	}
+	
+	
+	
+}

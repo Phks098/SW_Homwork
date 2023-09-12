@@ -1,0 +1,33 @@
+package test;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+
+		//x*x 크기의 2차원 배열을 만든다..
+		
+		  Scanner sc = new Scanner(System.in); int n = sc.nextInt(); 
+		  int[][] paper = new int[n][n];
+		  
+		  for(int i = 0; i<paper.length; i++) {
+			  for(int j = 0; j<paper[i].length; j++) {
+				  paper[i][j] = sc.nextInt();
+			  }
+		  }
+		  
+		  
+		  System.out.println("\n\n\n\n");
+		  
+		  
+		  for(int i = 0; i<paper.length; i++) {
+			  for(int j = 0; j<paper[i].length; j++) {
+				  System.out.print();
+			  }
+		  }
+		
+		
+	}
+}

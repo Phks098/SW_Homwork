@@ -1,0 +1,10 @@
+
+public class Chicken extends Animal {
+
+	@Override
+	void speaK(String speakSound) {
+		// TODO Auto-generated method stub
+		System.out.println("꼭끼오");
+	}
+
+}

@@ -1,0 +1,21 @@
+package test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+
+		InputStream in = System.in;
+		OutputStream out =System.out;
+		
+		int idata = in.read();
+		
+		out.write(idata);
+		out.flush();
+		out.close();
+		
+	}
+}

@@ -1,0 +1,9 @@
+
+public class Animal {
+	String name;
+	float weight;
+	String color;
+	
+	abstract void Speak();
+	
+}

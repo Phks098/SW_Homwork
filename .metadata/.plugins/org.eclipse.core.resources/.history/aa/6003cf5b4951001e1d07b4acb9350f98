@@ -1,0 +1,153 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AnimalFarm {
+	public ArrayList<Animal> list;
+	Scanner sc;
+	
+	public AnimalFarm() {
+		// TODO Auto-generated constructor stub
+		list = new ArrayList<Animal>();
+		sc = new Scanner(System.in);
+	}
+	
+	
+	public void mainMenu() {
+		
+		System.out.println("�메인 메뉴 원하는 기능을 선택하세요");
+		System.out.println("1새로운 동물 객체 추가 기능");
+		System.out.println("2.이름으로 동물 객체 찾기");
+		System.out.println("3.목록에 있는 특정 동물에 대해 소리를 내도록 시키기 ");
+		System.out.println("4.농장안에 있는 모든 동물에 대해 소리내도록 시키기 ");
+		System.out.println("5.농장 안에 있는 모든 동물의 이름/무게/색깔 표로 출력하라고 시키기  ");
+		int select = sc.nextInt();
+		for(int i = 0; i<80; i++) {
+			System.out.println();
+		}
+		
+		
+		if(select==1) {
+			addAnimal();
+		}
+		if(select==2);{
+			findAnimal();
+		}
+		if(select==3) {
+			animalList_getSound();
+		}
+		if(select == 4) {
+			allSpeak();
+		}
+		if(select ==5) {
+			
+			printTable();
+			
+		}
+		
+	}
+	
+	//1. �
+	public void addAnimal() {
+		int a;
+		
+		String name;
+		float weight;
+		String color;
+		sc.nextLine();
+		System.out.print("동물 이름 : ");
+		name =sc.next();
+		sc.nextLine();
+		
+		System.out.print("동물 무게 : ");
+		weight = sc.nextFloat();
+		sc.nextLine();
+		
+		
+		System.out.print("동물 색깔 : ");
+		color = sc.next();
+		sc.nextLine();
+		
+		
+		System.out.println("동물 유형: 1. 개, 2. 고양이, 3. 닭");
+		System.out.println("동물 유형 선택: ");
+		a= sc.nextInt();
+		sc.nextLine();
+		
+		if(a==1) {
+			list.add(new Dog(name,weight,color));
+		
+		}if(a==2)
+		{
+			
+			list.add(new Cat(name,weight,color));
+		}
+		if(a==3) {
+		
+			list.add(new Chicken(name,weight,color));
+		}
+		sc.nextLine();
+		mainMenu();
+	}
+	
+	//2.이름으로 동물 객체 찾기
+	public void findAnimal() {
+		sc.nextLine();
+		System.out.println("찾을 동물의 이름 입력:");
+		String selsctName = sc.nextLine();
+		
+		int count = 1;
+		for(int i =0; i<list.size(); i++) {
+			System.out.println("검색 결과");
+			if(selsctName.equals(list.get(i).getName())) {
+				System.out.println(count+"번째 검색 결과");
+				list.get(i).animalInformation();
+			}
+		}
+		
+		mainMenu();
+		
+		
+		
+		
+	}
+	
+	
+	//3. 목록에 있는 특정 동물에 대해 소리를 내도록 시키기
+	public void animalList_getSound() {
+		int a = 0 ;;
+		System.out.println("동물 목록 출력");
+		for(int i =0; i<list.size(); i++ ) {
+			System.out.println(":"+(i+1));
+			list.get(i).animalInformation();				
+		}
+		System.out.println("목록 중 울릴 동물 선택: ");
+		a=sc.nextInt();
+		list.get(a-1).speaK();
+		mainMenu();
+	}
+	
+	//4. �냽�옣�븞�뿉 �엳�뒗 紐⑤뱺 �룞臾쇱뿉 ���빐 �냼由� �궡�룄濡� �떆�궎湲�
+	public void allSpeak() {
+	for(int i =0; i<list.size(); i++ ) {
+		list.get(i).speaK();		
+		mainMenu();
+	}
+	}
+	
+	//5. �냽�옣 �븞�뿉 �엳�뒗 紐⑤뱺 �룞臾쇱쓽 �씠由�/臾닿쾶/�깋源� �몴濡� 異쒕젰�븯�씪怨� �떆�궎湲�
+	
+	public void printTable() {
+		System.out.println("----------------------------");
+        System.out.println("| 항목          | 정보                  |");
+        System.out.println("----------------------------");
+        for(int i=0; i<list.size(); i++) {
+        	list.get(i).animalInformation();
+        	System.out.println("----------------------------");
+        }
+        mainMenu();
+	}
+	
+	
+	
+}
+

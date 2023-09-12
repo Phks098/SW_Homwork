@@ -1,0 +1,16 @@
+
+public class Cat extends Animal {
+
+	public Cat(String name, float weight, String color) {
+		super(name, weight, color);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	void speaK(String speakSound) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
